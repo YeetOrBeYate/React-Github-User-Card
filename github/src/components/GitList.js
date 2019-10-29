@@ -1,4 +1,5 @@
 import React from 'react';
+import GitUser from "./GitUser";
 
 class GitList extends React.Component{
 
@@ -19,12 +20,16 @@ class GitList extends React.Component{
         
         return(
             <div>
-                <p>Here are my github people</p>
-                
+                <h1>Here are my github people</h1>
 
-                {this.state.list.map((person)=>(
-                    <p>{person.login}</p>
-                ))}
+                <div className="followers">
+                    {this.state.list.map((person)=>(
+                        <GitUser 
+                        login={person.login}
+                        image={person.avatar_url}
+                        location={person.location}/>
+                    ))}
+                </div>
             </div>
         );
     }

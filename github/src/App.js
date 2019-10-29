@@ -27,12 +27,18 @@ class App extends React.Component {
           },
           followers:host.followers_url
         })
-        console.log("App",res.data)
-        axios
-        .get(`${this.state.followers}`)
-        .then((res)=>{
-          console.log("this is followers", res)
-        })
+        
+          axios
+          .get(`${this.state.followers}`)
+          .then((res)=>{
+            console.log("this is followers", res.data)
+            this.setState({
+              data:res.data
+            })
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
       })
       .catch((err)=>{
         console.log(err)
@@ -43,12 +49,11 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        Yeet
         <GitUser 
         login={this.state.host.login}
         image={this.state.host.image}
         location={this.state.host.location}/>
-        {/* <GitList data={this.state.data}/> */}
+        <GitList data={this.state.data}/>
       </div>
     );
   }

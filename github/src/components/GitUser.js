@@ -6,7 +6,7 @@ class GitUser extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="user">
                 <h1>{this.props.login}</h1>
                 <img src={this.props.image}/>
                 <p>{this.props.location}</p>
