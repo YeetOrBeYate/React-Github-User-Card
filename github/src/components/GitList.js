@@ -20,14 +20,13 @@ class GitList extends React.Component{
         
         return(
             <div>
-                <h1>Here are my github people</h1>
+                <h1>GitHub Followers</h1>
 
                 <div className="followers">
                     {this.state.list.map((person)=>(
                         <GitUser 
                         login={person.login}
-                        image={person.avatar_url}
-                        location={person.location}/>
+                        image={person.avatar_url}/>
                     ))}
                 </div>
             </div>

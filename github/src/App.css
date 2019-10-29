@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: black;
 }
 
 
@@ -14,5 +15,14 @@
   border: 1px solid black;
   padding: 0;
   margin: 1% auto;
-  width: 30%;
+  width: 25%;
+  background-image: linear-gradient(to bottom right, lightblue, black);
+}
+
+.user:hover{
+  transform: scale(1.05);
+}
+
+h1{
+  color:white
 }
